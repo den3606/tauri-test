@@ -75,8 +75,6 @@ function App() {
         <button type="submit">Greet</button>
       </form>
       <p>{greetMsg}</p>
-      <p>{greetMsg}</p>
-      <p>{greetMsg}</p>
     </main>
   );
 }
