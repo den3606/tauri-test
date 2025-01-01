@@ -5,8 +5,6 @@ import "./App.css";
 import { check } from '@tauri-apps/plugin-updater';
 import { relaunch } from '@tauri-apps/plugin-process';
 
-const update = await check();
-
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
@@ -14,6 +12,7 @@ function App() {
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
     setGreetMsg(await invoke("greet", { name }));
+    const update = await check();
     if (update) {
       console.log(
         `found update ${update.version} from ${update.date} with notes ${update.body}`
